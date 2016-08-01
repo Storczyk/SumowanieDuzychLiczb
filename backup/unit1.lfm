@@ -1,0 +1,244 @@
+object Form1: TForm1
+  Left = 1127
+  Height = 451
+  Top = 114
+  Width = 749
+  BorderStyle = bsSingle
+  Caption = 'Dodawanie dużych liczb-Sroczyk Pawel'
+  ClientHeight = 431
+  ClientWidth = 749
+  Color = clGradientActiveCaption
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.4.2.0'
+  object Image1: TImage
+    Left = 0
+    Height = 432
+    Top = 0
+    Width = 750
+  end
+  object KoniecProgramu: TButton
+    Left = 664
+    Height = 25
+    Top = 400
+    Width = 75
+    Caption = 'Koniec'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = KoniecProgramuClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object DodajLiczbe: TButton
+    Left = 544
+    Height = 25
+    Top = 56
+    Width = 75
+    Caption = 'Dodaj liczbe'
+    OnClick = DodajLiczbeClick
+    TabOrder = 1
+  end
+  object ListaLiczb: TListBox
+    Left = 16
+    Height = 216
+    Top = 40
+    Width = 400
+    Font.Height = 20
+    ItemHeight = 0
+    MultiSelect = True
+    ParentFont = False
+    ScrollWidth = 1000
+    TabOrder = 2
+  end
+  object PoleLiczba: TEdit
+    Left = 421
+    Height = 23
+    Top = 32
+    Width = 315
+    OnClick = PoleLiczbaClick
+    OnKeyPress = PoleLiczbaKeyPress
+    TabOrder = 3
+    Text = 'Wprowadź tutaj liczbe'
+  end
+  object DaneZPliku: TButton
+    Left = 613
+    Height = 25
+    Top = 94
+    Width = 123
+    Caption = 'Odczytaj dane z pliku'
+    OnClick = DaneZPlikuClick
+    TabOrder = 4
+  end
+  object PoleOdczytPlik: TEdit
+    Left = 421
+    Height = 23
+    Top = 94
+    Width = 187
+    OnClick = DaneZPlikuClick
+    TabOrder = 5
+  end
+  object LabelLiczba: TLabel
+    Left = 421
+    Height = 15
+    Top = 16
+    Width = 36
+    Caption = 'Liczba:'
+    Color = clHighlight
+    Font.Color = clHighlightText
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabelPlik: TLabel
+    Left = 421
+    Height = 15
+    Top = 72
+    Width = 22
+    Caption = 'Plik:'
+    Color = clHighlight
+    Font.Color = clHighlightText
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object CzyscListe: TButton
+    Left = 176
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Czysc liste'
+    OnClick = CzyscListeClick
+    TabOrder = 6
+  end
+  object ZapisDoPliku: TButton
+    Left = 168
+    Height = 25
+    Top = 392
+    Width = 105
+    Caption = 'Zapisz do pliku'
+    OnClick = ZapisDoPlikuClick
+    TabOrder = 7
+  end
+  object PoleWynikPrzyblizony: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 320
+    Width = 400
+    EditLabel.AnchorSideLeft.Control = PoleWynikPrzyblizony
+    EditLabel.AnchorSideRight.Control = PoleWynikPrzyblizony
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = PoleWynikPrzyblizony
+    EditLabel.Left = 16
+    EditLabel.Height = 15
+    EditLabel.Top = 302
+    EditLabel.Width = 400
+    EditLabel.Caption = 'Wynik przyblizony:'
+    EditLabel.Color = clHighlight
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.Color = clHighlightText
+    ReadOnly = True
+    TabOrder = 8
+  end
+  object PoleWynikDokladny: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 368
+    Width = 400
+    EditLabel.AnchorSideLeft.Control = PoleWynikDokladny
+    EditLabel.AnchorSideRight.Control = PoleWynikDokladny
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = PoleWynikDokladny
+    EditLabel.Left = 16
+    EditLabel.Height = 15
+    EditLabel.Top = 350
+    EditLabel.Width = 400
+    EditLabel.Caption = 'Wynik dokladny:'
+    EditLabel.Color = clHighlight
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.Color = clHighlightText
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 9
+  end
+  object PoleZapisPlik: TEdit
+    Left = 16
+    Height = 23
+    Top = 392
+    Width = 144
+    OnClick = PoleZapisPlikClick
+    OnEditingDone = PoleZapisPlikEditingDone
+    TabOrder = 10
+    Text = 'Nazwa pliku'
+  end
+  object AktualnyCzasText: TStaticText
+    Left = 16
+    Height = 24
+    Top = 8
+    Width = 208
+    Caption = 'AktualnyCzasText'
+    Color = clBtnFace
+    Font.Color = clCaptionText
+    Font.Height = -16
+    ParentFont = False
+    ParentColor = False
+    TabOrder = 11
+    Transparent = False
+  end
+  object Instrukcja: TStaticText
+    Left = 432
+    Height = 267
+    Top = 128
+    Width = 296
+    Caption = 'Aby wprowadzić liczbę którą chcesz dodać wpisz ją w pole "Liczba:", a następnie naciśnij ENTER lub przycik "Dodaj Liczbe".'#13#10'Aby odczytać dane z pliku kliknij w pole "Plik:" lub na przycisk "Odczytaj dane z pliku" i wybierz plik z rozszerzeniem .txt.'#13#10'Żeby liczby zostały wczytane to muszą mieć one format:{ x  ;  x,  ;  ,x  ;  x,x  } gdzie x to dowolna ilość cyfr np: 123,2 ; 1, ; ,34'#13#10'Aby zapisac dane do pliku w polu "Nazwa Pliku" wpisz nazwe pliku bez rozszerzenia .txt i kliknij przycisk "Zapisz do pliku".'#13#10'Jeśli chcesz zmienić tło, czcionkę lub kolor pasków to w lewym górnym roku programu kliknij "Ustawienia", wyskoczy okienko z opcjami,'#13#10'gdy chcesz wybrać własne tło, musi mieć ono format .bmp'
+    TabOrder = 12
+    Visible = False
+  end
+  object Credits: TStaticText
+    Left = 432
+    Height = 112
+    Top = 288
+    Width = 296
+    Caption = 'Autor: Pawel Sroczyk, 1 EF-DI, grupa L10'#13#10'Projekt: Dodawanie dowolnej ilosci '#13#10'duzych liczb rzeczywistych'#13#10'Przedmiot: Wstęp do Programowania'#13#10'Rok: 2015/2016'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -17
+    Font.Name = 'Buxton Sketch'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 13
+  end
+  object OpenDialog1: TOpenDialog
+    InitialDir = 'GetCurrentDir'
+    Options = [ofReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing, ofViewDetail]
+    left = 640
+    top = 96
+  end
+  object Timer1: TTimer
+    Interval = 500
+    OnTimer = Timer1Timer
+    left = 48
+    top = 8
+  end
+  object MainMenu1: TMainMenu
+    left = 270
+    top = 65528
+    object MenuItem1: TMenuItem
+      Caption = 'Ustawienia'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Instrukcja'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Informacje o projekcie'
+      OnClick = MenuItem3Click
+    end
+  end
+end

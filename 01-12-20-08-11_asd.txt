@@ -1,0 +1,5 @@
+Dodawanie liczb:
+765756,0
+0,654645645
+Wynik przyblizony: 765756,654645645
+Wynik dokladny: 765756,654645645
